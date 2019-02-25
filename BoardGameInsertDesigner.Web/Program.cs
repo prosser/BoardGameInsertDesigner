@@ -1,19 +1,17 @@
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-
-namespace BoardGameInsertPlanner
+namespace Rosser.BoardGameInsertDesigner.Web
 {
+    using Microsoft.AspNetCore;
+    using Microsoft.AspNetCore.Hosting;
+
     public class Program
     {
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                   .UseStartup<Startup>();
+
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
-        }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
-        {
-            return WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
         }
     }
 }
